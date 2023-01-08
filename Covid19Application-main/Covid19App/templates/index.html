@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <title>Covid 19 App</title>
+
+    <style>
+
+        *{
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            background-color: skyblue;
+        }
+
+        #nc {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #tc {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #nd {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #td {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #tr {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #d {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #summary {
+            text-align: center;
+            background-color:skyblue;
+            color: black;
+        }
+
+        #th1 {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #th2 {
+            background-color: #07b8c7;
+            color: black;
+        }
+
+        #th3 {
+            background-color: #07b8c7;
+            color: blue;
+        }
+
+        #th4 {
+            background-color: #07b8c7;
+            color: red;
+        }
+
+        #th5 {
+            background-color: #07b8c7;
+            color: green;
+        }
+
+        #th6 {
+            background-color: #07b8c7;
+            color: whitesmoke;
+        }
+
+        #td1 {
+            color:  #07b8c7;
+        }
+
+        #td2 {
+            color: #07b8c7;
+        }
+
+        #td3 {
+            color: #07b8c7;
+        }
+
+        #td4 {
+            color: #07b8c7;
+        }
+
+        #td5 {
+            color: #07b8c7;
+        }
+
+        #td6 {
+            color: #07b8c7;
+        }
+    </style>
+
+</head>
+
+<body class="p-1">
+
+
+
+
+    <h1>Live Covid19 Counter</h1>
+
+    <br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col m-2" id="nc">
+                <div class="card-body-1">
+                    <h4 class="card-title1">New Confirmed</h4>
+                    <p class="card-text">{{globalSummary.NewConfirmed}}</p>
+                </div>
+            </div>
+            <div class="card col m-2" id="tc">
+                <div class="card-body-2">
+                    <h4 class="card-title">Total Confirmed</h4>
+                    <p class="card-text">{{globalSummary.TotalConfirmed}}</p>
+                </div>
+            </div>
+            <div class="card col m-2" id="nd">
+                <div class="card-body-3">
+                    <h4 class="card-title">New Deaths</h4>
+                    <p class="card-text">{{globalSummary.NewDeaths}}</p>
+                </div>
+            </div>
+
+            <div class="card col m-2" id="td">
+                <div class="card-body-4">
+                    <h4 class="card-title">Total Deaths</h4>
+                    <p class="card-text">{{globalSummary.TotalDeaths}}</p>
+                </div>
+            </div>
+
+            <!-- <div class="card col m-2">
+                <div class="card-body">
+                    <h4 class="card-title">New Recovered</h4>
+                    <p class="card-text">{{globalSummary.NewRecovered}}</p>
+                </div>
+            </div> -->
+
+            <div class="card col m-2" id="tr">
+                <div class="card-body-5">
+                    <h4 class="card-title">Total Recovered</h4>
+                    <p class="card-text">{{globalSummary.TotalRecovered}}</p>
+                </div>
+            </div>
+
+            <div class="card col m-2" id="d">
+                <div class="card-body-6">
+                    <h4 class="card-title">Date</h4>
+                    <p class="card-text">{{globalSummary.Date}}</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+
+
+        <h4 class="alert alert-light border rounded" id="summary">
+            Country Wise Summary
+        </h4>
+
+
+
+        <hr>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th id="th1">Sr.No.</th>
+                    <th id="th2">Country</th>
+                    <th id="th3">TotalConfirmed</th>
+                    <th id="th4">TotalDeaths</th>
+                    <th id="th5">TotalRecovered</th>
+                    <th id="th6">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in countries %}
+                <tr>
+                    <td scope="row" id="td1">{{forloop.counter}}</td>
+                    <td id="td2">{{c.Country}}</td>
+                    <td id="td3">{{c.TotalConfirmed}}</td>
+                    <td id="td4">{{c.TotalDeaths}}</td>
+                    <td id="td5">{{c.TotalRecovered}}</td>
+                    <td id="td6">{{c.Date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
